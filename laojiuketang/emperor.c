@@ -10,7 +10,7 @@ litter game: you are an emperor, live for 10 days to win, don't let the favorabi
 #define MAXNUM 6
 
 char name[MAXNUM][20] = {"Snow_White", "Litter_Red", "Cinderella", "Beyonce", "Stone",};
-char level[5][20] = {"maid", "concubine", "girlfriend", "wife", "queen"};		//girl's level combine with level_num when useing eg.level
+char level[5][20] = {"maid", "concubine", "girlfriend", "wife", "queen"};		//girl's level combine with level_num when useing eg.level[level_num[i]]
 int level_num[MAXNUM] = {0, 0, 0, 0, 0, -1,};
 int favorability[MAXNUM] = {100, 100, 100, 100, 100, -100,};
 int i;
