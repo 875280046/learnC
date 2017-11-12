@@ -3,6 +3,7 @@ practice one dimensional array, two dimensional array.
 litter game: you are an emperor, live for 10 days to win, don't let the favorability reduce to 50.
 
 (pinyin: lingjichuxuebiancheng zhi Cyuyanrumen. teacher:xusong. laojiuxuetang) 
+(chapter 7, classhour 39)
 */
 
 #include<stdio.h>
