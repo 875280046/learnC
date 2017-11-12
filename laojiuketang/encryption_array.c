@@ -1,5 +1,4 @@
 /*
-
 encryption array: array[i] + index + key
 in the same way dencryption array: newarray[i] - index - key
 
