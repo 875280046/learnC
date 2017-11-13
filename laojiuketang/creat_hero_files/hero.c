@@ -26,7 +26,7 @@ typedef struct Hero
 }Hero;
 */
 void creatHero(){
-	Skill skill[3] = {
+	Skill skill[3] = {		//struct array
 		{1, "paishang"},
 		{2, "daohai"},
 		{3, "bashu"}
