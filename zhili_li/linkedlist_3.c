@@ -25,7 +25,7 @@ typedef struct Node		//Node include Data and pointer next
 
 
 void add(Node**, int a, int b);		//head insertion
-void add_t(Node* head, int a, int b);	//tail insertion
+void add_t(Node** head, int a, int b);	//tail insertion
 int main(){
 	Node* head = NULL;
 	add(&head, 1, 2);
@@ -37,9 +37,9 @@ int main(){
 		current = current->next;
 	}
 	printf("\n");
-	add_t(head, 3, 4);
-	add_t(head, 33, 44);
-	add_t(head, 333, 444);
+	add_t(&head, 3, 4);
+	add_t(&head, 33, 44);
+	add_t(&head, 333, 444);
 	current = head;
 	while(current != NULL){
 		printf("%d %d\n", current->data.age, current->data.val);
@@ -55,8 +55,8 @@ void add(Node** head, int a, int b){
 	p->next = *head;
 	*head = p; 
 }
-
-void add_t(Node* head, int a, int b){
+//this function is not good, it is not consider if linked list is empty
+/*void add_t(Node* head, int a, int b){
 	while(head->next != NULL){		//this is shallow copy, will not change head
 		head = head->next;
 	}
@@ -64,6 +64,24 @@ void add_t(Node* head, int a, int b){
 	head->next->data.age = a;
 	head->next->data.val = b;
 	head->next->next = NULL;
-}
+}*/
 	
-
+void add_t(Node** head, int a, int b){
+	if(*head == NULL){		//if linked list is empty, regard new Node as head Node
+		*head = malloc(sizeof(Node));
+		(*head)->data.age = a;
+		(*head)->data.val = b;
+		(*head)->next = NULL;	
+	}
+	else{
+		Node* p = *head;
+		while(p->next != NULL){		//find the last Node
+			p = p->next;
+		}
+		p->next = malloc(sizeof(Node));		//put the new Node behind the last Node
+		p->next->data.age = a;
+		p->next->data.val = b;
+		p->next->next = NULL;
+	}
+	
+}
